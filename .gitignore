@@ -19,3 +19,15 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+
+#android
+.gradle
+*.iml
+*.ipr
+*.iws
+.idea/
+/local.properties
+.DS_Store
+/build
+
+
