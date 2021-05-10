@@ -12,7 +12,7 @@ class MyApp extends BaseApp {
   @override
   Widget build(BuildContext context, Widget page) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Boot Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
