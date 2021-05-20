@@ -19,14 +19,17 @@ NSDictionary * mParams = nil;
     return self;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+//viewDidAppear时机有点晚，会先显示一下上一个页面才更新到新页面，所以换成viewWillAppear
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     if(mParams == nil){
         mParams = [[NSDictionary alloc]init];
     }
     NSDictionary * dict = @{@"route" : mRoute, @"params" : mParams};
     NSData * jsonData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:NULL];
-    [FlutterBootEngine.sharedInstance.channel sendMessage:[[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    NSString * str = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", str);
+    [FlutterBootEngine.sharedInstance.channel sendMessage:str];
 }
 
 @end

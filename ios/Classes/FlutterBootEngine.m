@@ -42,7 +42,7 @@ FlutterBasicMessageChannel * channel = nil;
 
 - (void)initEngine{
     engine = [[FlutterEngine alloc]initWithName:@"flutter engine"];
-    channel = [FlutterBasicMessageChannel messageChannelWithName:@"startPage" binaryMessenger:engine.binaryMessenger];
+    channel = [FlutterBasicMessageChannel messageChannelWithName:@"startPage" binaryMessenger:engine.binaryMessenger codec:[FlutterStringCodec sharedInstance]];
     [engine run];
 }
 
