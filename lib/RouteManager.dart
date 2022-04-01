@@ -69,7 +69,7 @@ class _PageNotFount extends BaseState<PageNotFount>{
   Widget buildImpl(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("page not found"),
+        child: Text("error: page not found"),
       ),
     );
   }
